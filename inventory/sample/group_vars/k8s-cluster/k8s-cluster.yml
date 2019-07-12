@@ -80,7 +80,7 @@ kube_network_plugin_multus: false
 
 # Kubernetes internal network for services, unused block of space.
 #kube_service_addresses: 10.233.0.0/18
-kube_service_addresses: 192.168.0.0/22
+kube_service_addresses: 10.233.0.0/18
 
 # internal network. When used, it will assign IP
 # addresses from this range to individual pods.
@@ -134,7 +134,8 @@ dns_mode: coredns
 # Set manual server if using a custom cluster DNS server
 # manual_dns_server: 10.x.x.x
 # Enable nodelocal dns cache
-enable_nodelocaldns: true
+#enable_nodelocaldns: true
+enable_nodelocaldns: false
 nodelocaldns_ip: 169.254.25.10
 
 # Can be docker_dns, host_resolvconf or none
