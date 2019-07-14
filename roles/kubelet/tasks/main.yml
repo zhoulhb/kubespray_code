@@ -1,0 +1,8 @@
+- name: config kubelet
+  lineinfile:
+    dest: /etc/kubernetes/kubelet.env 
+    insertafter: '^--max'
+    line: "--eviction-hard=memory.available<15% \\\n--system-reserved=memory=0.5Gi,cpu=500m \\\n--kube-reserved=memory=0.5Gi,cpu=1 \\"
+
+- name: restart kubelet
+  service: name=kubelet state=restarted

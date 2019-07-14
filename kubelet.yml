@@ -1,0 +1,5 @@
+- hosts: "{{ host_list }}"
+  become: yes
+  become_method: sudo
+  roles:
+    - kubelet
